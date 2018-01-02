@@ -1,23 +1,41 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {RouterModule, ROUTES, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { routing } from './app.routing';
 
-export const ROUTES: Routes = [{ path:'login',component: LoginComponent}]
+import { customHttpProvider } from './_helpers/index';
+import { AlertComponent } from './_directives/index';
+import { AuthGuard } from './_guards/index';
+import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { HomeComponent } from './home/index';
+import { LoginComponent } from './login/index';
+import { RegisterComponent } from './register/index';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    AlertComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
-    RouterModule.forRoot(ROUTES),
+    FormsModule,
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    customHttpProvider,
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

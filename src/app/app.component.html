@@ -2,7 +2,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Acceuil</a>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item active">
@@ -15,10 +15,20 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <router-outlet></router-outlet>
+
 
     <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="/login">Connexion</a>
+    <a class="nav-link" routerLink="/login">Connexion</a>
 
   </div>
 </nav>
+
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+      <alert></alert>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
