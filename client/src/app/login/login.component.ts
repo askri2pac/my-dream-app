@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../_services/index';
-import { ModalService } from '../_services/modal.service';
+
 
 @Component({
   moduleId: module.id,
@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService,
-    private modalService: ModalService) { }
+    private alertService: AlertService) { }
 
   ngOnInit() {
     // reset login status
@@ -42,11 +41,4 @@ export class LoginComponent implements OnInit {
         });
   }
 
-  openModal(id: string){
-    this.modalService.open(id);
-  }
-
-  closeModal(id: string){
-    this.modalService.close(id);
-  }
 }

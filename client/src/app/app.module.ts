@@ -13,8 +13,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
-import { ModalComponent } from './_directives/modal.component';
-import { ModalService } from './_services/modal.service';
+
 
 
 @NgModule({
@@ -24,7 +23,7 @@ import { ModalService } from './_services/modal.service';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ModalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,6 @@ import { ModalService } from './_services/modal.service';
     AlertService,
     AuthenticationService,
     UserService,
-    ModalService
   ],
   bootstrap: [AppComponent]
 })
