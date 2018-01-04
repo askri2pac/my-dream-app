@@ -15,13 +15,15 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AlertComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { RegisterComponent } from './register/index';
     AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService
+    UserService,
   ],
   bootstrap: [AppComponent]
 })
