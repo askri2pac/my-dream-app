@@ -14,21 +14,59 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
+
     </ul>
 
 
     <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" routerLink="/login">Connexion</a>
+    <ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mon compte
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a  class="nav-link" (click)="ngxSmartModalService.getModal('myModal').open()">Connexion</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+
+
+
 
   </div>
 </nav>
 
-
-<div class="jumbotron">
-  <div class="container">
-    <div class="col-sm-8 col-sm-offset-2">
-      <alert></alert>
-      <router-outlet></router-outlet>
-    </div>
+<ngx-smart-modal  #myModal [identifier]="'myModal'">
+  <div class="modal-header">
+    <h1>Connexion</h1>
   </div>
-</div>
+
+  <div class="modal-content">
+    <p>Some stuff...</p>
+
+    <button (click)="myModal.close()">Close</button>
+    <ul>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+      <li>efr</li>
+    </ul>
+  </div>
+
+
+</ngx-smart-modal>
+
+
+
+
+
+
+

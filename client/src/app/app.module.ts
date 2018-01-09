@@ -13,6 +13,8 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -27,6 +29,8 @@ import { RegisterComponent } from './register/index';
   ],
   imports: [
     BrowserModule,
+    NgxSmartModalModule.forRoot(),
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     routing
@@ -37,6 +41,8 @@ import { RegisterComponent } from './register/index';
     AlertService,
     AuthenticationService,
     UserService,
+    NgxSmartModalService,
+
   ],
   bootstrap: [AppComponent]
 })
