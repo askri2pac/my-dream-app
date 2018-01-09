@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../_services/index';
+import {NgxSmartModalService} from 'ngx-smart-modal';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
+    public ngxSmartModalService: NgxSmartModalService,
     private alertService: AlertService) { }
 
   ngOnInit() {
