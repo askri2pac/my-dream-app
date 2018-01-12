@@ -23,6 +23,7 @@ function authenticate(req, res) {
             if (user) {
                 // authentication successful
                 res.send(user);
+
             } else {
                 // authentication failed
                 res.status(400).send('Username or password is incorrect');
