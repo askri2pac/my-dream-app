@@ -32,14 +32,14 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true;
+    console.log('data1');
     this.authenticationService.login(this.model.username, this.model.password)
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
+          // this.router.navigate([this.returnUrl]);
+          this.router.navigate(['/register']);
+          this.ngxSmartModalService.getModal('login').close()
+          console.log('data');
         });
   }
 

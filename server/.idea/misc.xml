@@ -3,7 +3,4 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES5" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
-  </component>
 </project>

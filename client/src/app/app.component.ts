@@ -4,6 +4,8 @@ import {NgxSmartModalService} from 'ngx-smart-modal';
 import {AlertService} from './_services/alert.service';
 import {AuthenticationService} from './_services/authentication.service';
 import {UserService} from './_services/user.service';
+import {LoginComponent} from './login/index';
+import {RegisterComponent} from './register/index';
 
 @Component({
   selector: 'app-root',
@@ -22,36 +24,25 @@ export class AppComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private alertService: AlertService,
     private userService: UserService,
+    public loginComponent: LoginComponent,
+    public registerComponent: RegisterComponent
   ) { }
 
   ngOnInit() {
     // reset login status
     this.authenticationService.logout();
-
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+
   login() {
     this.loading = true;
+    console.log('nassim1');
     this.authenticationService.login(this.model.username, this.model.password)
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
-  }
-
-  register() {
-    this.loading = true;
-    this.userService.create(this.model)
-      .subscribe(
-        data => {
-          this.alertService.success('Registration successful', true);
-          this.router.navigate(['/login']);
         },
         error => {
           this.alertService.error(error);
