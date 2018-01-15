@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           // this.router.navigate([this.returnUrl]);
-          this.router.navigate(['/register']);
+          this.router.navigate(['test']);
           this.ngxSmartModalService.getModal('login').close()
           console.log('data');
         });
